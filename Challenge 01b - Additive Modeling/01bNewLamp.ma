@@ -1,6 +1,6 @@
 //Maya ASCII 2024 scene
 //Name: 01bNewLamp.ma
-//Last modified: Tue, Jan 30, 2024 09:16:46 PM
+//Last modified: Wed, Jan 31, 2024 04:04:41 PM
 //Codeset: 1252
 requires maya "2024";
 requires -nodeType "aiOptions" -nodeType "aiAOVDriver" -nodeType "aiAOVFilter" "mtoa" "5.3.4.1";
@@ -11,17 +11,17 @@ fileInfo "product" "Maya 2024";
 fileInfo "version" "2024";
 fileInfo "cutIdentifier" "202310181224-69282f2959";
 fileInfo "osv" "Windows 11 Home v2009 (Build: 22631)";
-fileInfo "UUID" "15326162-4424-EB54-C480-14BC35A3B587";
+fileInfo "UUID" "4DACAF41-42FC-8A93-C8FC-CB8025E85294";
 createNode transform -s -n "persp";
 	rename -uid "D847308D-4ABD-81C6-845F-C4A8671C6593";
 	setAttr ".v" no;
-	setAttr ".t" -type "double3" 3.3023323058763099 1.8484762769741752 3.7481777796570976 ;
-	setAttr ".r" -type "double3" -16.538352729586091 43.000000000003325 0 ;
+	setAttr ".t" -type "double3" 2.9002748243729388 1.7964774261909811 3.9802157561883198 ;
+	setAttr ".r" -type "double3" -17.738352729589785 35.800000000004253 0 ;
 createNode camera -s -n "perspShape" -p "persp";
 	rename -uid "8574C626-4642-6556-4B70-4D84B287E494";
 	setAttr -k off ".v" no;
 	setAttr ".fl" 34.999999999999993;
-	setAttr ".coi" 5.1533824307325258;
+	setAttr ".coi" 5.2107479365410709;
 	setAttr ".imn" -type "string" "persp";
 	setAttr ".den" -type "string" "persp_depth";
 	setAttr ".man" -type "string" "persp_mask";
@@ -63,14 +63,14 @@ createNode camera -s -n "frontShape" -p "front";
 createNode transform -s -n "side";
 	rename -uid "5255B3C4-47EE-E81D-16A3-CB8EDC7467DC";
 	setAttr ".v" no;
-	setAttr ".t" -type "double3" 1000.1 0.53510415393549549 -0.2652582192054127 ;
+	setAttr ".t" -type "double3" 1000.1 0.52583390788392514 -0.26395658867855143 ;
 	setAttr ".r" -type "double3" 0 90 0 ;
 createNode camera -s -n "sideShape" -p "side";
 	rename -uid "2DD7A838-4A79-8E2B-A45F-BA9A64924395";
 	setAttr -k off ".v" no;
 	setAttr ".rnd" no;
 	setAttr ".coi" 1000.1;
-	setAttr ".ow" 3.7648343775014768;
+	setAttr ".ow" 3.0447235908433932;
 	setAttr ".imn" -type "string" "side";
 	setAttr ".den" -type "string" "side_depth";
 	setAttr ".man" -type "string" "side_mask";
@@ -116,6 +116,7 @@ createNode mesh -n "DeskLampMeshShape" -p "DeskLampMesh";
 	setAttr ".gtag[12].gtagcmp" -type "componentList" 6 "f[1]" "f[6:13]" "f[20:25]" "f[32:37]" "f[44:181]" "f[192:196]";
 	setAttr ".gtag[13].gtagnm" -type "string" "topRing";
 	setAttr ".gtag[13].gtagcmp" -type "componentList" 4 "e[34:39]" "e[58:63]" "e[76:81]" "e[369:373]";
+	setAttr ".pv" -type "double2" 0.5 0.3125 ;
 	setAttr ".uvst[0].uvsn" -type "string" "map1";
 	setAttr -s 245 ".uvst[0].uvsp[0:244]" -type "float2" 0.375 0 0.625 0 0.375
 		 0.25 0.625 0.25 0.375 0.5 0.625 0.5 0.375 0.75 0.625 0.75 0.375 1 0.625 1 0.875 0
@@ -173,6 +174,25 @@ createNode mesh -n "DeskLampMeshShape" -p "DeskLampMesh";
 	setAttr ".dcc" -type "string" "Ambient+Diffuse";
 	setAttr ".covm[0]"  0 1 1;
 	setAttr ".cdvm[0]"  0 1 1;
+	setAttr -s 18 ".pt";
+	setAttr ".pt[16]" -type "float3" 0 0 -0.012928486 ;
+	setAttr ".pt[17]" -type "float3" 0 0 -0.012928486 ;
+	setAttr ".pt[18]" -type "float3" 0 0 -0.012928486 ;
+	setAttr ".pt[19]" -type "float3" 0 0 -0.012928486 ;
+	setAttr ".pt[20]" -type "float3" 0 0 -0.012928486 ;
+	setAttr ".pt[21]" -type "float3" 0 0 -0.012928486 ;
+	setAttr ".pt[29]" -type "float3" 0 0.00096829236 0 ;
+	setAttr ".pt[30]" -type "float3" 0 0.00096829236 0 ;
+	setAttr ".pt[31]" -type "float3" 0 0.00096829236 0 ;
+	setAttr ".pt[32]" -type "float3" 0 0.00096829236 0 ;
+	setAttr ".pt[33]" -type "float3" 0 0.00096829236 0 ;
+	setAttr ".pt[34]" -type "float3" 0 0.00096829236 0 ;
+	setAttr ".pt[41]" -type "float3" 0 0.00096829236 0 ;
+	setAttr ".pt[42]" -type "float3" 0 0.00096829236 0 ;
+	setAttr ".pt[43]" -type "float3" 0 0.00096829236 0 ;
+	setAttr ".pt[44]" -type "float3" 0 0.00096829236 0 ;
+	setAttr ".pt[45]" -type "float3" 0 0.00096829236 0 ;
+	setAttr ".pt[46]" -type "float3" 0 0.00096829236 0 ;
 	setAttr -s 201 ".vt";
 	setAttr ".vt[0:165]"  -0.5 0 0.31929892 0.5 0 0.31929892 -0.5 0.068144739 0.2716561
 		 0.5 0.068144739 0.2716561 -0.5 0.068144739 -0.31929892 0.5 0.068144739 -0.31929892
@@ -282,8 +302,8 @@ createNode mesh -n "DeskLampMeshShape" -p "DeskLampMesh";
 		 168 181 0 180 181 0 181 182 1 180 182 1 169 183 0 181 183 0 183 182 1 170 184 0 183 184 0
 		 184 182 1 171 185 0 184 185 0 185 182 1 172 186 0 185 186 0 186 182 1 186 180 0 187 188 0
 		 189 190 0 190 191 0 191 192 0 192 187 0 193 194 0 195 196 0 196 197 0 197 198 0 198 193 0
-		 187 193 0 188 194 0 189 195 0 190 196 0 191 197 0 192 198 0 199 187 1 199 188 1 199 189 1
-		 199 190 1 199 191 1 199 192 1 193 200 1 194 200 1 195 200 1 196 200 1 197 200 1 198 200 1;
+		 187 193 0 188 194 0 189 195 0 190 196 0 191 197 0 192 198 0 199 187 1 199 188 0 199 189 0
+		 199 190 1 199 191 1 199 192 1 193 200 1 194 200 0 195 200 0 196 200 1 197 200 1 198 200 1;
 	setAttr -s 197 -ch 760 ".fc[0:196]" -type "polyFaces" 
 		f 4 0 5 -2 -5
 		mu 0 4 0 1 3 2
@@ -684,20 +704,20 @@ createNode mesh -n "DeskLampMeshShape" -p "DeskLampMesh";
 	setAttr ".pd[0]" -type "dataPolyComponent" Index_Data UV 0 ;
 	setAttr ".hfd" -type "dataPolyComponent" Index_Data Face 0 ;
 createNode lightLinker -s -n "lightLinker1";
-	rename -uid "E60D2AE5-4393-5770-6D74-BF9925DB29BF";
+	rename -uid "18F75D99-43A3-1188-79BE-849E3E0150FB";
 	setAttr -s 2 ".lnk";
 	setAttr -s 2 ".slnk";
 createNode shapeEditorManager -n "shapeEditorManager";
-	rename -uid "08FF152D-45C7-B145-40BA-7FA87DF90649";
+	rename -uid "FEA417B7-454B-A707-B7D9-2A84332A40A5";
 createNode poseInterpolatorManager -n "poseInterpolatorManager";
-	rename -uid "248C1C04-4092-2DFA-0971-888801A9C3A8";
+	rename -uid "2F269095-40A6-CD54-BB03-BCB57CA5A99E";
 createNode displayLayerManager -n "layerManager";
-	rename -uid "4905DB65-4010-83F6-AE7A-23919A89A123";
+	rename -uid "DC8C04D0-4D98-6AE2-9A0D-47A19B428AF6";
 createNode displayLayer -n "defaultLayer";
 	rename -uid "E062BDB4-4E8E-021F-1322-E5892FF2B044";
 	setAttr ".ufem" -type "stringArray" 0  ;
 createNode renderLayerManager -n "renderLayerManager";
-	rename -uid "F07CF309-4D0D-32B9-7EE2-CAA2B774BF95";
+	rename -uid "9DE65BF7-4D68-1AF7-8F19-4E82D41B9632";
 createNode renderLayer -n "defaultRenderLayer";
 	rename -uid "9F2D5989-48CA-52CE-047E-F89323342F5C";
 	setAttr ".g" yes;
@@ -765,7 +785,7 @@ createNode script -n "sceneConfigurationScriptNode";
 	setAttr ".b" -type "string" "playbackOptions -min 1 -max 120 -ast 1 -aet 200 ";
 	setAttr ".st" 6;
 createNode mayaUsdLayerManager -n "mayaUsdLayerManager1";
-	rename -uid "918CDE21-416D-FF0C-EC79-48A9453A463E";
+	rename -uid "80039F1B-4971-DD1B-A082-EB871169DE8A";
 	setAttr ".sst" -type "string" "";
 select -ne :time1;
 	setAttr ".o" 1;
