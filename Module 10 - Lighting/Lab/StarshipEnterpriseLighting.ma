@@ -1,6 +1,6 @@
 //Maya ASCII 2024 scene
 //Name: StarshipEnterpriseLighting.ma
-//Last modified: Fri, Apr 12, 2024 11:44:33 PM
+//Last modified: Sat, Apr 13, 2024 12:18:25 AM
 //Codeset: 1252
 requires maya "2024";
 requires "stereoCamera" "10.0";
@@ -13,7 +13,7 @@ fileInfo "product" "Maya 2024";
 fileInfo "version" "2024";
 fileInfo "cutIdentifier" "202310181224-69282f2959";
 fileInfo "osv" "Windows 11 Home v2009 (Build: 22631)";
-fileInfo "UUID" "49D30F56-402E-29E7-A422-AD8B6D3F7AD0";
+fileInfo "UUID" "3F5B2DCC-4576-3B46-339D-60B25368A24A";
 createNode transform -s -n "persp";
 	rename -uid "59B22BD5-40A9-8243-5305-8DA33FF9953D";
 	setAttr ".v" no;
@@ -12071,32 +12071,32 @@ createNode aiAreaLight -n "aiAreaLightShape6" -p "aiAreaLight6";
 	setAttr ".aal" -type "attributeAlias" {"exposure","aiExposure","normalize","aiNormalize"
 		} ;
 createNode lightLinker -s -n "lightLinker1";
-	rename -uid "B443E390-4787-66A2-F876-388ABDCD1F1D";
+	rename -uid "47338729-41FF-8CCF-F5DD-509F0F5E50D3";
 	setAttr -s 3 ".lnk";
 	setAttr -s 3 ".slnk";
 createNode shapeEditorManager -n "shapeEditorManager";
-	rename -uid "DD1CC581-4FFD-BDBF-7670-1B8BF7FB223B";
+	rename -uid "6193789B-4477-E152-E5C8-65BE91596636";
 createNode poseInterpolatorManager -n "poseInterpolatorManager";
-	rename -uid "1442F990-4A20-793D-ED09-AB8AD267F879";
+	rename -uid "9A3A4FA6-42D8-F1B9-8C00-78A8EDB35A5F";
 createNode displayLayerManager -n "layerManager";
-	rename -uid "7188894E-4BA9-8DED-D9D8-448C46F23DB1";
+	rename -uid "F91629A7-40D7-DE72-F9F0-14B08D5DA1E2";
 createNode displayLayer -n "defaultLayer";
 	rename -uid "3D421526-4F0B-6E79-980F-3E9BFF097DE8";
 	setAttr ".ufem" -type "stringArray" 0  ;
 createNode renderLayerManager -n "renderLayerManager";
-	rename -uid "7C00C4EA-445B-B34E-EF68-07A0807F4A99";
+	rename -uid "82C9A078-4B15-140C-395A-3AA47195A9E7";
 createNode renderLayer -n "defaultRenderLayer";
 	rename -uid "FE9F1F44-4465-025A-E04C-02AFE5B01FBC";
 	setAttr ".g" yes;
 createNode aiOptions -s -n "defaultArnoldRenderOptions";
 	rename -uid "3E3F620D-43E2-C32A-97FC-65B600FF8976";
 	addAttr -ci true -sn "ARV_options" -ln "ARV_options" -dt "string";
-	setAttr ".AA_samples" 2;
-	setAttr ".GI_diffuse_samples" 1;
-	setAttr ".GI_specular_samples" 1;
-	setAttr ".GI_transmission_samples" 1;
-	setAttr ".GI_sss_samples" 1;
-	setAttr ".GI_volume_samples" 1;
+	setAttr ".AA_samples" 5;
+	setAttr ".GI_diffuse_samples" 3;
+	setAttr ".GI_specular_samples" 3;
+	setAttr ".GI_transmission_samples" 3;
+	setAttr ".GI_sss_samples" 3;
+	setAttr ".GI_volume_samples" 3;
 	setAttr ".version" -type "string" "5.3.4.1";
 	setAttr ".ARV_options" -type "string" "Test Resolution=100%;Camera=perspShape;Color Management.Gamma=1;Color Management.Exposure=0;Background.BG=BG Color;Background.Color=0 0 0;Background.Image=;Background.Scale=1 1;Background.Offset=0 0;Background.Apply Color Management=1;Foreground.Enable FG=0;Foreground.Image=;Foreground.Scale=1 1;Foreground.Offset=0 0;Foreground.Apply Color Management=1;";
 createNode aiAOVFilter -s -n "defaultArnoldFilter";
@@ -12251,7 +12251,7 @@ createNode file -n "file5";
 createNode place2dTexture -n "place2dTexture5";
 	rename -uid "97309C7F-4DA3-E427-74CB-C2952BCDCFC4";
 createNode mayaUsdLayerManager -n "mayaUsdLayerManager1";
-	rename -uid "3C3DE32B-4E98-0BD2-7248-54B6752D4193";
+	rename -uid "577992FE-4C3A-BF38-44DC-32B2F2B50BE1";
 	setAttr ".sst" -type "string" "";
 select -ne :time1;
 	setAttr ".o" 1;

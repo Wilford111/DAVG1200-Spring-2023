@@ -1,20 +1,19 @@
 //Maya ASCII 2024 scene
 //Name: GoldfishLighting.ma
-//Last modified: Fri, Apr 12, 2024 11:39:32 PM
+//Last modified: Sat, Apr 13, 2024 12:14:56 AM
 //Codeset: 1252
 requires maya "2024";
 requires "stereoCamera" "10.0";
 requires -nodeType "aiOptions" -nodeType "aiAOVDriver" -nodeType "aiAOVFilter" -nodeType "aiSkyDomeLight"
 		 -nodeType "aiStandardSurface" "mtoa" "5.3.4.1";
 requires -nodeType "mayaUsdLayerManager" -dataType "pxrUsdStageData" "mayaUsdPlugin" "0.25.0";
-requires "stereoCamera" "10.0";
 currentUnit -l centimeter -a degree -t film;
 fileInfo "application" "maya";
 fileInfo "product" "Maya 2024";
 fileInfo "version" "2024";
 fileInfo "cutIdentifier" "202310181224-69282f2959";
 fileInfo "osv" "Windows 11 Home v2009 (Build: 22631)";
-fileInfo "UUID" "BA9CEA47-4E5F-591B-DFC7-D5ABB394A224";
+fileInfo "UUID" "3BBA57E6-4486-DAC3-E308-D2888289DAB5";
 createNode transform -s -n "persp";
 	rename -uid "AA05510B-4BB4-640E-E217-2DBB4F33176B";
 	setAttr ".v" no;
@@ -9738,26 +9737,32 @@ createNode aiSkyDomeLight -n "aiSkyDomeLightShape1" -p "aiSkyDomeLight1";
 	setAttr ".rcsh" no;
 	setAttr ".aal" -type "attributeAlias" {"exposure","aiExposure"} ;
 createNode lightLinker -s -n "lightLinker1";
-	rename -uid "F024FF64-4D76-7DA6-D974-D08F4F9B5386";
+	rename -uid "0857DA93-49D2-9403-9020-28A3949E166D";
 	setAttr -s 7 ".lnk";
 	setAttr -s 7 ".slnk";
 createNode shapeEditorManager -n "shapeEditorManager";
-	rename -uid "B090D635-48FE-8AE4-1A24-57BE5A701DDE";
+	rename -uid "B34708FD-47DE-0962-C004-C895B8200D12";
 createNode poseInterpolatorManager -n "poseInterpolatorManager";
-	rename -uid "BB600AE7-4BED-70C9-8D30-ACA3E0BD0F7D";
+	rename -uid "F9B8DE26-49FC-9BF4-08E3-6B9F84A54016";
 createNode displayLayerManager -n "layerManager";
-	rename -uid "01EADFBF-4791-70F4-FFCF-7D911B057478";
+	rename -uid "7E512422-4F3E-8759-841D-4B90A362CFEB";
 createNode displayLayer -n "defaultLayer";
 	rename -uid "7C949DEA-4F5B-0F38-9135-A2A138F4055C";
 	setAttr ".ufem" -type "stringArray" 0  ;
 createNode renderLayerManager -n "renderLayerManager";
-	rename -uid "0B2E569B-46F9-C1E6-91BB-2B94BA380F60";
+	rename -uid "0266B7EC-4C0E-5EDC-D79E-578B301D8650";
 createNode renderLayer -n "defaultRenderLayer";
 	rename -uid "DDD20AF7-4468-3FC0-A387-DEBB1E17CFC0";
 	setAttr ".g" yes;
 createNode aiOptions -s -n "defaultArnoldRenderOptions";
 	rename -uid "E3DF3919-48BD-0C4D-DE27-C59EFCC4A5A9";
 	addAttr -ci true -sn "ARV_options" -ln "ARV_options" -dt "string";
+	setAttr ".AA_samples" 5;
+	setAttr ".GI_diffuse_samples" 3;
+	setAttr ".GI_specular_samples" 3;
+	setAttr ".GI_transmission_samples" 3;
+	setAttr ".GI_sss_samples" 3;
+	setAttr ".GI_volume_samples" 3;
 	setAttr ".version" -type "string" "5.3.4.1";
 createNode aiAOVFilter -s -n "defaultArnoldFilter";
 	rename -uid "D529F6E1-44D2-5352-3215-6CB7187BF735";
@@ -10050,7 +10055,7 @@ createNode place2dTexture -n "place2dTexture4";
 createNode bump2d -n "bump2d1";
 	rename -uid "12595C2C-485C-4123-E54B-2E8F565C0865";
 	setAttr ".bi" 1;
-	setAttr ".vc1" -type "float3" 0 0.0001 0 ;
+	setAttr ".vc1" -type "float3" 0 9.9999997e-06 0 ;
 	setAttr ".vc2" -type "float3" 9.9999997e-06 9.9999997e-06 0 ;
 createNode aiStandardSurface -n "ItsABowl";
 	rename -uid "EAC636B1-42ED-4561-51AD-70BE627AE2BC";
@@ -10182,7 +10187,7 @@ createNode file -n "file9";
 createNode place2dTexture -n "place2dTexture9";
 	rename -uid "E2459BF2-4D31-815A-72AB-CEBAD78765E4";
 createNode mayaUsdLayerManager -n "mayaUsdLayerManager1";
-	rename -uid "15A395F9-4ED4-2A3B-9525-26886D82434B";
+	rename -uid "AD5E90DF-4CBF-DB7A-DA5A-649AC3EEE983";
 	setAttr ".sst" -type "string" "";
 select -ne :time1;
 	setAttr ".o" 1;
@@ -10192,8 +10197,6 @@ select -ne :hardwareRenderingGlobals;
 	setAttr ".otfva" -type "Int32Array" 22 0 1 1 1 1 1
 		 1 1 1 0 0 0 0 0 0 0 0 0
 		 0 0 0 0 ;
-	setAttr ".aoon" yes;
-	setAttr ".msaa" yes;
 	setAttr ".fprt" yes;
 	setAttr ".rtfm" 1;
 select -ne :renderPartition;
@@ -10220,6 +10223,8 @@ select -ne :initialParticleSE;
 select -ne :defaultRenderGlobals;
 	addAttr -ci true -h true -sn "dss" -ln "defaultSurfaceShader" -dt "string";
 	setAttr ".ren" -type "string" "arnold";
+	setAttr ".outf" 51;
+	setAttr ".imfkey" -type "string" "exr";
 	setAttr ".dss" -type "string" "standardSurface1";
 select -ne :defaultResolution;
 	setAttr ".pa" 1;
